@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.JiudiantuidingDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.JiudiantuidingEntity" id="jiudiantuidingMap">
+        <result property="dingdanbianhao" column="dingdanbianhao"/>
+        <result property="jiudianmingcheng" column="jiudianmingcheng"/>
+        <result property="jiudiandizhi" column="jiudiandizhi"/>
+        <result property="fangjianmingcheng" column="fangjianmingcheng"/>
+        <result property="fangjianleixing" column="fangjianleixing"/>
+        <result property="yiwanjiage" column="yiwanjiage"/>
+        <result property="tuidingshijian" column="tuidingshijian"/>
+        <result property="yonghuzhanghao" column="yonghuzhanghao"/>
+        <result property="yonghuxingming" column="yonghuxingming"/>
+    </resultMap>
+
+    <select id="selectListView"
+		resultType="com.cl.entity.view.JiudiantuidingView" >
+
+		SELECT  jiudiantuiding.* FROM jiudiantuiding  jiudiantuiding 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.cl.entity.view.JiudiantuidingView" >
+		SELECT * FROM jiudiantuiding  jiudiantuiding <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
